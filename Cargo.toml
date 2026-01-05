@@ -1,0 +1,27 @@
+[package]
+name = "eywa-utoipa"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+# Axum
+axum = { workspace = true }
+
+# Utoipa
+utoipa = { workspace = true }
+utoipa-axum = { workspace = true }
+utoipa-scalar = { workspace = true, optional = true }
+utoipa-swagger-ui = { workspace = true, optional = true }
+
+# Serde
+serde = { workspace = true }
+serde_json = { workspace = true }
+
+# Eywa ecosystem
+eywa-hateoas = { path = "../eywa-hateoas" }
+eywa-errors = { workspace = true }
+
+[features]
+default = []
+scalar = ["utoipa-scalar"]
+swagger-ui = ["utoipa-swagger-ui"]
